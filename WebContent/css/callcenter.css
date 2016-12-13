@@ -1,0 +1,44 @@
+.logo {
+	width:180px;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	font-size:20px;
+	font-weight:bold;
+	float:left;
+}
+
+.softphone {
+	width:1000px;
+	height:70px;
+	float:right;
+}
+.softphone_text_lay {
+	float:left;
+	padding:0 0 0 0;
+}
+.softphone_button_lay {
+	float:right;
+	padding:0 0 0 0;
+}
+.callNum_lay {
+	float:left;
+	padding:5 0 0 70;
+}
+.customerName_lay {
+	float:right;
+	padding:5 0 0 20;
+}
+
+.softphone_logintext_lay {
+	float:left;
+	padding:0 0 0 0;
+}
+.dn_lay {
+	float:left;
+	padding:5 0 0 70;
+}
+.agent_lay {
+	float:right;
+	padding:5 0 0 20;
+}

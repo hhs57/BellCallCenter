@@ -1,0 +1,104 @@
+<%@ page language="java" import="java.util.*"
+	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%-- <%
+	if (session.getAttribute("manager") == null
+			|| session.getAttribute("manager").equals("")) {
+		RequestDispatcher rd = request
+				.getRequestDispatcher("login.jsp");
+		rd.forward(request, response);
+	}
+%>  --%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Bell CallCenter</title>
+<link rel="stylesheet" type="text/css"
+	href="easyui/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="css/callcenter.css" />
+</head>
+<body class="easyui-layout">
+	<!-- 引入activeX控件-->
+	<object id="controlbyid"
+		classid="clsid:{83469908-01E3-4326-B8BF-602D9DCCCDF9}"
+		codebase="setup.exe" width=0 height=0 hspace=0 vspace=0></object>
+	<!-- 该处开始为整体页面的上面部分，包括logo和软电话 -->
+	<div data-options="region:'north',title:'softphone',noheader:true"
+		style="height: 80px;">
+		<div class="logo">呼叫中心系统</div>
+		<div class="softphone">
+			<div id="soft_login" class="softphone_logintext_lay"
+				style="display: block;">
+				<div class="dn_lay">
+					<input id="dnID" style="width: 180px;">
+				</div>
+				<div class="agent_lay">
+					<input id="agentID" style="width: 180px;">
+				</div>
+			</div>
+			<div id="soft_text" class="softphone_text_lay" style="display: none;">
+				<div class="callNum_lay">
+					<input id="callNum" style="width: 180px;">
+				</div>
+				<div class="customerName_lay">
+					<input id="customerName" style="width: 180px;">
+				</div>
+			</div>
+			<div class="softphone_button_lay">
+				<a href="#" id="login">签入</a> <a href="#" id="makeCall">拨打</a> <a
+					href="#" id="answer">应答</a> <a href="#" id="release">挂断</a> <a
+					href="#" id="ready">示闲</a> <a href="#" id="notReady">示忙</a> <a
+					href="#" id="hold">保留</a> <a href="#" id="retrieve">拾回</a> <a
+					href="#" id="conference">会议</a> <a href="#" id="transfer">转接</a> <a
+					href="#" id="complete">完成</a> <a href="#" id="logout">签出</a>
+			</div>
+		</div>
+	</div>
+    <!--电话接起事件后弹出窗口-->
+	<form id="customer_add"
+		style="margin: 0; padding: 5px 0 0 25px; color: #333;">
+		<p>
+			客户姓名：<input type="text" name="customername" class="textbox"
+				style="width: 200px;">
+		</p>
+		<p>
+			电话号码：<input type="text" name="telephonenum" class="textbox"
+				style="width: 200px;">
+		</p>
+		<p>
+			信息描述：<input class="easyui-textbox" name="describe"
+				data-options="multiline:true" style="height: 60px; width: 200px;"></input>
+		</p>
+	</form>
+
+	<!-- 该处开始为整体页面的左面部分，包括系统导航和菜单 -->
+	<div
+		data-options="region:'west',title:'导 航',split:true,iconCls:'icon-world'"
+		style="width: 180px; padding: 10px;">
+		<ul id="nav"></ul>
+	</div>
+
+
+	<!-- 该处开始为整体页面的中间部分，包括系统内容部分 -->
+	<div data-options="region:'center'" style="overflow: hidden;">
+		<div id="tabs">
+			<div title="起始 页" iconCls="icon-house"
+				style="padding: 0 10px; display: block;">
+				<p>欢迎来到上海贝尔呼叫中心系统！</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 该处开始为整体页面的下面部分，包括公司信息等 -->
+	<div
+		data-options="region:'south',title:'footer',split:true,noheader:true"
+		style="height: 35px; line-height: 30px; text-align: center;">
+		©2009-2016 Alcatel-Lucent. Powered by SoftPhone and CallCenter.</div>
+</body>
+
+<!-- 把script放在这个位置，防止加载时影响页面整体布局效果 -->
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="js/callcenter.js"></script>
+</html>
